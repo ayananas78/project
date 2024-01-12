@@ -9,7 +9,7 @@ function NavBar() {
                 <LogoContainer>
                     <Logo>
                         <img
-                            src={require("../../assets/logo.png")}
+                            src={require("../../assets/images/logo.png")}
                             alt="LOGO"
                         />
                     </Logo>
@@ -19,7 +19,7 @@ function NavBar() {
                         <NavLinkStyled to="/" activeClassName="active">
                             <ItemImage>
                                 <img
-                                    src={require("../../assets/home.png")}
+                                    src={require("../../assets/images/home.png")}
                                     alt="HOME"
                                 />
                             </ItemImage>
@@ -30,7 +30,7 @@ function NavBar() {
                         <NavLinkStyled to="/admin" activeClassName="active">
                             <ItemImage>
                                 <img
-                                    src={require("../../assets/admin.png")}
+                                    src={require("../../assets/images/admin.png")}
                                     alt="Admin"
                                 />
                             </ItemImage>
@@ -44,7 +44,7 @@ function NavBar() {
                         >
                             <ItemImage>
                                 <img
-                                    src={require("../../assets/membership.png")}
+                                    src={require("../../assets/images/membership.png")}
                                     alt="Membership"
                                 />
                             </ItemImage>
@@ -55,7 +55,7 @@ function NavBar() {
                         <NavLinkStyled to="/advocate" activeClassName="active">
                             <ItemImage>
                                 <img
-                                    src={require("../../assets/advocate.png")}
+                                    src={require("../../assets/images/advocate.png")}
                                     alt="Advocate"
                                 />
                             </ItemImage>
@@ -66,7 +66,10 @@ function NavBar() {
                 <Log>
                     <LogImage>
                         <img
-                            src={require("../../assets/logout.png")}
+                            src={
+                                require("../../assets/images/logout.svg")
+                                    .default
+                            }
                             alt="Logout"
                         />
                     </LogImage>
@@ -85,10 +88,11 @@ const Container = styled.section`
     justify-content: space-around;
     background: #6941c6;
     width: 20%;
+    height: 100vh;
 `;
 const LogoContainer = styled.div``;
 const Logo = styled.div`
-    width: 80px;
+    width: 60px;
     margin: 0 auto;
 
     img {
@@ -111,9 +115,14 @@ const NavLinkStyled = styled(NavLink)`
     cursor: pointer;
     display: flex;
     align-items: center;
+    padding: 10px 14px 10px 14px;
     text-decoration: none;
+    border-radius: 8px;
+    border-left: 2px solid transparent;
+
     &.active {
-        border-left: 2px solid #fff;
+        border-color: #fff;
+        background: #7f56d9;
     }
 `;
 const ItemImage = styled.div`
@@ -135,7 +144,7 @@ const Log = styled.div`
     margin: 0 auto;
 `;
 const LogImage = styled.div`
-    margin-right: 2opx;
+    margin-right: 25px;
     img {
         display: block;
         width: 100%;
