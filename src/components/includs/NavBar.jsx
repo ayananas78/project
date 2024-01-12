@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
     return (
@@ -15,7 +16,7 @@ function NavBar() {
                 </LogoContainer>
                 <MenuItems>
                     <Item>
-                        <Select>
+                        <NavLinkStyled to="/" activeClassName="active">
                             <ItemImage>
                                 <img
                                     src={require("../../assets/home.png")}
@@ -23,10 +24,10 @@ function NavBar() {
                                 />
                             </ItemImage>
                             <ItemName>Home</ItemName>
-                        </Select>
+                        </NavLinkStyled>
                     </Item>
                     <Item>
-                        <Select>
+                        <NavLinkStyled to="/admin" activeClassName="active">
                             <ItemImage>
                                 <img
                                     src={require("../../assets/admin.png")}
@@ -34,10 +35,13 @@ function NavBar() {
                                 />
                             </ItemImage>
                             <ItemName>Admin</ItemName>
-                        </Select>
+                        </NavLinkStyled>
                     </Item>
                     <Item>
-                        <Select>
+                        <NavLinkStyled
+                            to="/membership"
+                            activeClassName="active"
+                        >
                             <ItemImage>
                                 <img
                                     src={require("../../assets/membership.png")}
@@ -45,10 +49,10 @@ function NavBar() {
                                 />
                             </ItemImage>
                             <ItemName>Membership</ItemName>
-                        </Select>
+                        </NavLinkStyled>
                     </Item>
                     <Item>
-                        <Select>
+                        <NavLinkStyled to="/advocate" activeClassName="active">
                             <ItemImage>
                                 <img
                                     src={require("../../assets/advocate.png")}
@@ -56,7 +60,7 @@ function NavBar() {
                                 />
                             </ItemImage>
                             <ItemName>Advocate</ItemName>
-                        </Select>
+                        </NavLinkStyled>
                     </Item>
                 </MenuItems>
                 <Log>
@@ -103,11 +107,14 @@ const Item = styled.li`
         margin-bottom: 0;
     }
 `;
-const Select = styled.div`
+const NavLinkStyled = styled(NavLink)`
     cursor: pointer;
-
     display: flex;
     align-items: center;
+    text-decoration: none;
+    &.active {
+        border-left: 2px solid #fff;
+    }
 `;
 const ItemImage = styled.div`
     width: 25px;
